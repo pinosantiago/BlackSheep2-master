@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_de_pantalla3"
+    tools:context=".ActualizarCaja">
+
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre:"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_toEndOf="@+id/tvNombre"
+        android:layout_toRightOf="@+id/tvNombre"
+        android:hint="Nombre"
+        android:textColor="@color/black"></EditText>
+
+    <TextView
+        android:id="@+id/tvPorcentaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvNombre"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="506dp"
+        android:text="Porcentaje: "
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etPorcentaje"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_below="@+id/etNombre"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="119dp"
+        android:layout_marginRight="119dp"
+        android:layout_toEndOf="@+id/tvPorcentaje"
+        android:layout_toRightOf="@+id/tvPorcentaje"
+        android:hint="Porcentaje"
+        android:textColor="@color/black"></EditText>
+
+    <TextView
+        android:id="@+id/tvPorcentajeIcono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvNombre"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-300dp"
+        android:layout_marginLeft="-300dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="93dp"
+        android:textColor="@color/black"
+        android:layout_marginRight="93dp"
+        android:layout_marginBottom="506dp"
+        android:text="%"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvNombre"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="76dp"
+        android:layout_marginBottom="444dp"
+        android:text="Descripción:"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etDescripcion"
+        android:layout_width="215dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnCancelar"
+        android:layout_below="@+id/etPorcentaje"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginBottom="184dp"
+        android:layout_toEndOf="@+id/tvDescripcion"
+        android:layout_toRightOf="@+id/tvDescripcion"
+        android:hint="Descripcion"
+        android:textColor="@color/black"></EditText>
+
+    <Button
+        android:id="@+id/btnAceptar"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="207dp"
+        android:onClick="onClick"
+        android:text="Aceptar"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="203dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="205dp"
+        android:layout_toEndOf="@+id/btnAceptar"
+        android:layout_toRightOf="@+id/btnAceptar"
+        android:onClick="onClick"
+        android:text="Cancelar"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

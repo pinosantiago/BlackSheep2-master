@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_de_pantalla3"
+    tools:context=".CajaDetalle">
+
+    <LinearLayout
+        android:id="@+id/llDetalleCajas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_ui"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/tvNombreCaja"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/border_ui"
+            android:gravity="center"
+            android:text="Nombre Caja"
+            android:textColor="@color/black"
+            android:textSize="60sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDescripcionCaja"
+            android:layout_width="match_parent"
+            android:layout_height="218dp"
+            android:background="@drawable/border_ui"
+            android:gravity="left"
+            android:text="Descripcion Caja"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvPorcentajeCaja"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/border_ui"
+            android:gravity="center"
+            android:text="Porcentaje Caja"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvMontoCaja"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/border_ui"
+            android:gravity="center"
+            android:text="Monto Caja"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/llBotonesDetalleCaja"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnEditarCaja"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/border_ui"
+                android:onClick="onClick"
+                android:text="Editar"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/BtnEliminarCaja"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/border_ui"
+                android:onClick="onClick"
+                android:text="Eliminar"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

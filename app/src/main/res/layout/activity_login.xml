@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondo_de_pantalla3"
+    tools:context=".Login">
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="match_parent"
+        android:layout_height="267dp"
+        android:src="@drawable/logo1" />
+
+    <EditText
+        android:id="@+id/edtLogin"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:drawableLeft="@drawable/usuario2"
+        android:background="@drawable/edt_style"
+        android:drawablePadding="10dp"
+        android:textColor="@color/black"
+        android:hint="@string/user" />
+
+    <EditText
+        android:id="@+id/edtPass"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:ems="10"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="20dp"
+        android:drawableLeft="@android:drawable/ic_secure"
+        android:background="@drawable/edt_style"
+        android:drawablePadding="10dp"
+        android:hint="@string/pass"
+        android:textColor="@color/black"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnIngresar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:text="@string/ingresa"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:onClick="onClick" />
+    <Button
+        android:id="@+id/tvRegistrarse"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:text="Registrarse"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:onClick="onClick" />
+
+    <TextView
+        android:id="@+id/tvRecordarPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginBottom="5dp"
+        android:text="@string/obtenerContraseña"
+        android:onClick="onClick"
+        />
+
+</LinearLayout>

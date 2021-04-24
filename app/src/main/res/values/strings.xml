@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BoxSave!</string>
+    <string name="user">Usuario</string>
+    <string name="pass">Contraseña</string>
+    <string name="ingresa">Ingresar</string>
+    <string name="registrar">O Registrar</string>
+    <string name="obtenerContraseña">¿Olvidaste tu contraseña? Click Aqui</string>
+    <string name="titPerfil">Perfiles</string>
+    <string name="IngresarMovimiento">Ingresar $</string>
+    <string-array name="perfil_defecto">
+        <item>Perfil 1</item>
+        <item>Perfil 2</item>
+        <item>Perfil 3</item>
+        <item>Perfil 4</item>
+        <item>Perfil 5</item>
+        <item>Perfil 6</item>
+    </string-array>
+</resources>
