@@ -22,6 +22,7 @@
         <activity android:name=".IngresoUsuario" />
         <activity android:name=".MovimientoIngreso"/>
         <activity android:name=".MovimientoEgreso"/>
+        <activity android:name=".DetalleMovimiento"/>
         <activity android:name=".MainActivity">
 
             <intent-filter>

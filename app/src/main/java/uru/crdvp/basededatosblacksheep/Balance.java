@@ -9,13 +9,16 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import uru.crdvp.basededatosblacksheep.entidades.Caja;
 import uru.crdvp.basededatosblacksheep.entidades.Movimientos;
 import uru.crdvp.basededatosblacksheep.entidades.Perfil;
 import uru.crdvp.basededatosblacksheep.entidades.UsuariosPerfiles;
@@ -39,6 +42,17 @@ public class Balance extends AppCompatActivity {
         recycler.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         recycler.setLayoutManager(new LinearLayoutManager(this));
         AdaptadorBalance adapter = new AdaptadorBalance(listDatos);
+        adapter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Movimientos movimiento = listDatos.get(recycler.getChildAdapterPosition(v));
+                Intent detalleMovimiento = new Intent(Balance.this, DetalleMovimiento.class);
+                detalleMovimiento.putExtra("montomovi",movimiento.getMonto());
+                detalleMovimiento.putExtra("descmovi",movimiento.getDescripcion());
+                detalleMovimiento.putExtra("descfecha",movimiento.getFecha());
+                startActivity(detalleMovimiento);
+            }
+        });
         recycler.setAdapter(adapter);
         llenarlista(listDatos, adapter);
 
@@ -52,6 +66,20 @@ public class Balance extends AppCompatActivity {
         recycler.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         recycler.setLayoutManager(new LinearLayoutManager(this));
         AdaptadorBalance adapter = new AdaptadorBalance(listDatos);
+        adapter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Movimientos movimiento = listDatos.get(recycler.getChildAdapterPosition(v));
+                Intent detalleMovimiento = new Intent(Balance.this, DetalleMovimiento.class);
+                Bundle bundleDetalleMovimiento  = new Bundle();
+                detalleMovimiento.putExtra("montomovi",movimiento.getMonto().toString());
+                detalleMovimiento.putExtra("descmovi",movimiento.getDescripcion());
+                detalleMovimiento.putExtra("descfecha",movimiento.getFecha());
+                startActivity(detalleMovimiento);
+            }
+        });
+
+
         llenarlista(listDatos, adapter);
         recycler.setAdapter(adapter);
     }

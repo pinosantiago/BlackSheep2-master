@@ -28,7 +28,6 @@ public class RegistroPerfiles extends AppCompatActivity {
     ConexionSQLiteHelper conn;
     Usuario usuarioIngreso;
     boolean registroCorrecto = false;
-    TextView usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,10 +81,20 @@ public class RegistroPerfiles extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.BtnConfirmar:
-                registrarPerfil();
-                if (registroCorrecto){
-                    finish();
+                if(perfil.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(),"Ingresa un nombre al perfil",Toast.LENGTH_SHORT).show();
+
                 }
+                else{
+                    registrarPerfil();
+                    if (registroCorrecto){
+                        finish();
+                    }
+                }
+                break;
+            case R.id.btnCancelarPerfil:
+                finish();
+
         }
     }
 

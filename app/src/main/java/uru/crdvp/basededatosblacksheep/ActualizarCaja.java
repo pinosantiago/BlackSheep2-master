@@ -18,6 +18,7 @@ public class ActualizarCaja extends AppCompatActivity {
     ConexionSQLiteHelper conn;
     EditText etNombre,etPorcentaje,etDescripcion;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,12 +33,28 @@ public class ActualizarCaja extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btnAceptar:
-                if (funcionalidad != 1){
-                    modificarCaja();
-                } else {
-                    creoCaja();
+                if(etNombre.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(),"Ingresa un nombre para la caja",Toast.LENGTH_SHORT).show();
+                }else{
+                    //si el nombre no esta vacio se fija si el porcentaje no se modifico
+                    Toast.makeText(getApplicationContext(),"el %%%% "+caja.getPorcentaje().toString(),Toast.LENGTH_SHORT).show();
+                    if (funcionalidad != 1){
+                        if(caja.getPorcentaje().toString()!=etPorcentaje.getText().toString()){
+                            //agregar lo que hizo christian
+                        }
+                        else{
+                            modificarCaja();
+                            finish();
+                        }
+
+                    } else {
+                        //AGREGAR LO DE CHRISTIAN
+                        //creoCaja();
+
+                        //finish();
+                    }
+
                 }
-                finish();
                 break;
             case R.id.btnCancelar:
                 finish();

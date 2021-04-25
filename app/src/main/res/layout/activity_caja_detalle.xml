@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_de_pantalla3"
     tools:context=".CajaDetalle">
 
     <LinearLayout
@@ -33,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="244dp"
             android:background="@drawable/border_ui"
-            android:gravity="left"
+            android:gravity="center"
             android:text="Descripcion Caja"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -67,29 +66,34 @@
             android:layout_height="58dp"
             android:orientation="horizontal">
 
+
             <Button
                 android:id="@+id/btnEditarCaja"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:layout_weight="1"
+                android:layout_width="167dp"
+                android:layout_height="49dp"
                 android:onClick="onClick"
                 android:text="Editar"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.888"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.753" />
 
             <Button
                 android:id="@+id/BtnEliminarCaja"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
+                android:layout_width="163dp"
+                android:layout_height="49dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:onClick="onClick"
                 android:text="Eliminar"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.888"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.753" />
         </LinearLayout>
     </LinearLayout>
 

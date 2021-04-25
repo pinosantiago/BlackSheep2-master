@@ -86,10 +86,19 @@ public class MovimientoIngreso extends AppCompatActivity {
     public void onClick(View view){
         switch (view.getId()){
             case R.id.BtnConfirmar1 :
-            ingresarMontoBD();
-            actualizaMontoCaja();
-            finish();
-            break;
+                if(monto.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Porfavor Ingrese un monto",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    if(fecha.getText().toString().isEmpty()){
+
+                    }
+                    ingresarMontoBD();
+                    actualizaMontoCaja();
+                    finish();
+
+                }
+                break;
             case R.id.btnCancelarIngreso:
                 finish();
                 break;

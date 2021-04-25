@@ -32,16 +32,31 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <Button
-        android:id="@+id/BtnConfirmar"
-        android:layout_width="374dp"
-        android:layout_height="35dp"
+        android:id="@+id/btnCancelarPerfil"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
         android:onClick="onClick"
-        android:text="Registrar Perfil"
+        android:text="Cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintHorizontal_bias="0.603"
+        app:layout_constraintStart_toEndOf="@+id/BtnConfirmar1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.913" />
+
+    <Button
+        android:id="@+id/BtnConfirmar"
+        android:layout_width="135dp"
+        android:layout_height="49dp"
+        android:onClick="onClick"
+        android:text="Confirmar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.953" />
+        app:layout_constraintVertical_bias="0.913" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

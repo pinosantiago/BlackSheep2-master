@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Date;
 
 import uru.crdvp.basededatosblacksheep.entidades.Caja;
 import uru.crdvp.basededatosblacksheep.entidades.Perfil;
@@ -28,6 +29,7 @@ public class MovimientoEgreso extends AppCompatActivity {
     ArrayList<Integer> listaCajaAux;
     ArrayList<String> listaPerfiles;
     int contador;
+
     @Override
     public void onCreate(Bundle savedInstanceState){
             super.onCreate(savedInstanceState);
@@ -77,8 +79,20 @@ public class MovimientoEgreso extends AppCompatActivity {
     public void onClick(View view){
             switch (view.getId()){
                 case R.id.BtnConfirmaregreso :
-                    ingresarMontoBD();
-                    finish();
+                    if(monto.getText().toString().isEmpty()){
+                        Toast.makeText(getApplicationContext(), "Porfavor Ingrese un monto",Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        if(fecha.getText().toString().isEmpty()){
+
+                        }
+
+                        ingresarMontoBD();
+                        finish();
+
+                    }
+
+
                     break;
                 case R.id.btnCancelaregreso:
                     finish();

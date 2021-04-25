@@ -21,8 +21,9 @@ import uru.crdvp.basededatosblacksheep.entidades.Movimientos;
 
 public class AdaptadorBalance extends RecyclerView.Adapter<AdaptadorBalance.ViewHolder> {
 
-
     ArrayList<Movimientos> listDatos;
+    View.OnClickListener listener;
+
     public AdaptadorBalance(ArrayList<Movimientos> listDatos){
         this.listDatos = listDatos;
     }
@@ -32,6 +33,7 @@ public class AdaptadorBalance extends RecyclerView.Adapter<AdaptadorBalance.View
     public AdaptadorBalance.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).
                 inflate(R.layout.item_balance,null,false);
+        view.setOnClickListener(listener);
         return new AdaptadorBalance.ViewHolder(view);
     }
 
@@ -44,6 +46,15 @@ public class AdaptadorBalance extends RecyclerView.Adapter<AdaptadorBalance.View
     @Override
     public int getItemCount() {
         return listDatos.size();
+    }
+
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener = listener;
+    }
+    public void onClick(View v) {
+        if(listener!=null){
+            listener.onClick(v);
+        }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -59,7 +70,7 @@ public class AdaptadorBalance extends RecyclerView.Adapter<AdaptadorBalance.View
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
         @SuppressLint("ResourceAsColor")
         public void asignarDatos(Movimientos s) {
-            dato.setText(s.getMonto().toString());
+            dato.setText(" $ "+s.getMonto().toString());
             if (s.getIngEgr().equals("E")){
                 dato.setTextColor(Color.parseColor("#c4001d"));
 
