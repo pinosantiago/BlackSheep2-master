@@ -31,30 +31,17 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp" />
 
-    <TextView
-        android:id="@+id/tvUsuario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/BtnConfirmar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNombrePerfil"
-        app:layout_constraintVertical_bias="0.09"
-        tools:ignore="MissingConstraints"></TextView>
-
     <Button
         android:id="@+id/BtnConfirmar"
-        android:layout_width="400dp"
-        android:layout_height="37dp"
+        android:layout_width="374dp"
+        android:layout_height="35dp"
+        android:onClick="onClick"
         android:text="Registrar Perfil"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.452"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.953"
-        android:onClick="onClick"
-        />
+        app:layout_constraintVertical_bias="0.953" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

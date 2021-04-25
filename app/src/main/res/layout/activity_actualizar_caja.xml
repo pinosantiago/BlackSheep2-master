@@ -30,7 +30,7 @@
         android:layout_toEndOf="@+id/tvNombre"
         android:layout_toRightOf="@+id/tvNombre"
         android:hint="Nombre"
-        android:textColor="@color/black"></EditText>
+        android:textColor="@color/white"></EditText>
 
     <TextView
         android:id="@+id/tvPorcentaje"
@@ -114,38 +114,48 @@
         android:textColor="@color/black"></EditText>
 
     <Button
-        android:id="@+id/btnAceptar"
-        android:layout_width="175dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/btnCancelar"
+        android:layout_width="135dp"
+        android:layout_height="49dp"
+
+
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="207dp"
+        android:layout_marginStart="239dp"
+        android:layout_marginLeft="239dp"
+        android:layout_marginTop="440dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginRight="37dp"
+        android:layout_marginBottom="113dp"
         android:onClick="onClick"
-        android:text="Aceptar"
-        android:textColor="@color/black"
+        android:text="Cancelar"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btnCancelar"
-        android:layout_width="203dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/btnAceptar"
+        android:layout_width="135dp"
+        android:layout_height="49dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="205dp"
-        android:layout_toEndOf="@+id/btnAceptar"
-        android:layout_toRightOf="@+id/btnAceptar"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="439dp"
+        android:layout_marginEnd="243dp"
+        android:layout_marginRight="243dp"
+        android:layout_marginBottom="114dp"
         android:onClick="onClick"
-        android:text="Cancelar"
-        android:textColor="@color/black"
+        android:text="Aceptar"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold" />
 

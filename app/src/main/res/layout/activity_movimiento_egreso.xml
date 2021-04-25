@@ -23,34 +23,34 @@
 
     <Button
         android:id="@+id/btnCancelaregreso"
-        android:layout_width="187dp"
-        android:layout_height="57dp"
+        android:layout_width="135dp"
+        android:layout_height="49dp"
         android:onClick="onClick"
         android:text="Cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintHorizontal_bias="0.888"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.754" />
+        app:layout_constraintVertical_bias="0.753" />
 
     <Button
         android:id="@+id/BtnConfirmaregreso"
-        android:layout_width="187dp"
-        android:layout_height="57dp"
+        android:layout_width="135dp"
+        android:layout_height="49dp"
         android:onClick="onClick"
         android:text="Confirmar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintHorizontal_bias="0.128"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.752" />
+        app:layout_constraintVertical_bias="0.753" />
 
     <EditText
         android:id="@+id/montoegreso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="275dp"
+        android:layout_height="48dp"
         android:ems="10"
         android:hint="Ingresa el monto"
         android:inputType="number"
@@ -61,34 +61,32 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.12" />
 
+
     <EditText
         android:id="@+id/descegreso"
-        android:layout_width="380dp"
-        android:layout_height="67dp"
+        android:layout_width="275dp"
+        android:layout_height="48dp"
         android:ems="10"
         android:hint="Ingresa una descripcion (opcional)"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.277" />
+        app:layout_constraintVertical_bias="0.246" />
 
     <EditText
         android:id="@+id/fechaegreso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="275dp"
+        android:layout_height="48dp"
         android:ems="10"
         android:hint="Fecha(por defecto ahora)"
         android:inputType="date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.412" />
-
+        app:layout_constraintVertical_bias="0.376" />
 
     <Spinner
         android:id="@+id/SpnCaja"

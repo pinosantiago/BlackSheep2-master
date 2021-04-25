@@ -5,14 +5,14 @@ public class Movimientos {
     private Integer idMovimiento;
     private Integer idPerfil;
     private Integer monto;
-    private Integer IngEgr; /*Ingreso o Egreso*/
+    private String IngEgr; /*Ingreso o Egreso*/
     private Integer idCaja;
     private String descripcion;
 
 
     private String fecha;
 
-    public Movimientos(Integer idMovimiento, Integer idPerfil, Integer monto, Integer ingEgr, Integer idCaja, String descripcion, String fecha) {
+    public Movimientos(Integer idMovimiento, Integer idPerfil, Integer monto, String ingEgr, Integer idCaja, String descripcion, String fecha) {
         this.idMovimiento = idMovimiento;
         this.idPerfil = idPerfil;
         this.monto = monto;
@@ -46,11 +46,11 @@ public class Movimientos {
         this.monto = monto;
     }
 
-    public Integer getIngEgr() {
+    public String getIngEgr() {
         return IngEgr;
     }
 
-    public void setIngEgr(Integer ingEgr) {
+    public void setIngEgr(String ingEgr) {
         IngEgr = ingEgr;
     }
 

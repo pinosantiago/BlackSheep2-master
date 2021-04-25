@@ -41,8 +41,8 @@ public class AdaptadorCaja extends RecyclerView.Adapter<AdaptadorCaja.CajaViewHo
     @Override
     public void onBindViewHolder(@NonNull CajaViewHolder holder, int position) {
 
-         holder.asignarDatos(listaCajas.get(position).getNombre(),
-                 listaCajas.get(position).getMonto().toString(),listaCajas.get(position).getPorcentaje().toString());
+         holder.asignarDatos(listaCajas.get(position).getNombre()+":",
+                 "$ "+listaCajas.get(position).getMonto().toString(),listaCajas.get(position).getPorcentaje().toString()+ "%");
     }
 
     @Override

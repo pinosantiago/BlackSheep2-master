@@ -16,13 +16,14 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import uru.crdvp.basededatosblacksheep.entidades.Movimientos;
 import uru.crdvp.basededatosblacksheep.entidades.Perfil;
 import uru.crdvp.basededatosblacksheep.entidades.UsuariosPerfiles;
 import uru.crdvp.basededatosblacksheep.utilidades.Utilidades;
 
 public class Balance extends AppCompatActivity {
     Perfil perfil;
-    ArrayList<String> listDatos = new ArrayList<>();
+    ArrayList<Movimientos> listDatos = new ArrayList<Movimientos>();
     RecyclerView recycler;
     ConexionSQLiteHelper conn =  new ConexionSQLiteHelper(this, "bd_BlackSheep", null,1);
     String monto;
@@ -51,34 +52,33 @@ public class Balance extends AppCompatActivity {
         recycler.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         recycler.setLayoutManager(new LinearLayoutManager(this));
         AdaptadorBalance adapter = new AdaptadorBalance(listDatos);
-        recycler.setAdapter(adapter);
         llenarlista(listDatos, adapter);
-
-
+        recycler.setAdapter(adapter);
     }
 
 
-    public void llenarlista(ArrayList<String> listDatos,AdaptadorBalance adapter){
+    public void llenarlista(ArrayList<Movimientos> listDatos,AdaptadorBalance adapter){
         SQLiteDatabase db = conn.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + Utilidades.TABLA_MOVIMIENTOS + " WHERE idPerfil = "+perfil.getIdPerfil().toString()+" ORDER BY idMovimiento DESC",null);
         int k = 1;
         int totalcuenta = 0;
         while (cursor.moveToNext()){
             // Cargo los movimientos del perfil
+            int idMov  = cursor.getInt(0);
+            int idPerfil = cursor.getInt(1);
             monto  = cursor.getString(2);
-            listDatos.add(monto);
+            String ingEgr  = cursor.getString(3);
+            int idCaja  = cursor.getInt(4);
+            String desc  = cursor.getString(5);
+            String fecha  = cursor.getString(6);
+            listDatos.add(new Movimientos(idMov,idPerfil,Integer.parseInt(monto),ingEgr,idCaja,desc,fecha));
             adapter.notifyItemInserted(listDatos.size() - 1);
-                totalcuenta += Integer.parseInt(monto);
-                k++;
-            }
-
-            String totalStr = "Total: $" + totalcuenta;
-            total = (TextView) findViewById(R.id.tvTotalBalance);
-            total.setText(totalStr);
-
-
-
-
+            totalcuenta += Integer.parseInt(monto);
+            k++;
+        }
+        String totalStr = "Total: $" + totalcuenta;
+        total = (TextView) findViewById(R.id.tvTotalBalance);
+        total.setText(totalStr);
         db.close();
     }
 
@@ -98,9 +98,6 @@ public class Balance extends AppCompatActivity {
                 i.putExtras(bundle);
                 startActivity(i);
                 onResume();
-
-
-
                 break;
             case R.id.btnIngresoGasto:
                 // Viajo al Panel de Egresos de Caja

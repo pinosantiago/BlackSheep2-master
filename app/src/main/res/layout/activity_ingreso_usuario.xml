@@ -5,131 +5,106 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".IngresoUsuario">
+
     <TextView
         android:id="@+id/tvUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Usuario: "
-        android:textSize="20sp"
+        android:text="Registro de Usuario "
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintHorizontal_bias="0.423"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.089" />
+        app:layout_constraintVertical_bias="0.027" />
 
     <EditText
         android:id="@+id/tvUsuarioLog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="253dp"
+        android:layout_height="60dp"
+        android:hint="Nombre de usuario"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.118"
-        app:layout_constraintStart_toEndOf="@+id/tvUsuario"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.075"
+        app:layout_constraintVertical_bias="0.202"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/tvContraseña"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Contraseña: "
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUsuario"
-        app:layout_constraintVertical_bias="0.202" />
 
     <EditText
         android:id="@+id/tvContraseñaLog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="253dp"
+        android:layout_height="60dp"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
-        app:layout_constraintStart_toEndOf="@+id/tvContraseña"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.305"
+        app:layout_constraintVertical_bias="0.336"
         tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/tvNombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nombre: "
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvContraseña"
-        app:layout_constraintVertical_bias="0.219" />
-
 
     <EditText
         android:id="@+id/tvNombreLog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="253dp"
+        android:layout_height="60dp"
+        android:hint="Tu nombre"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.109"
-        app:layout_constraintStart_toEndOf="@+id/tvNombre"
-        app:layout_constraintTop_toBottomOf="@+id/tvContraseñaLog"
-        app:layout_constraintVertical_bias="0.173"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/tvDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Fecha Nacimiento"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvPais"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNombre"
-        app:layout_constraintVertical_bias="0.524"></TextView>
-
-    <TextView
-        android:id="@+id/tvPais"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pais: "
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNombre"
-        app:layout_constraintVertical_bias="0.451" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.46"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/tvPaisLog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="253dp"
+        android:layout_height="60dp"
+        android:hint="Pais"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.171"
-        app:layout_constraintStart_toEndOf="@+id/tvPais"
-        app:layout_constraintTop_toBottomOf="@+id/tvDate"
-        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.593"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/BtnConfirmar"
-        android:layout_width="400dp"
-        android:layout_height="37dp"
+        android:layout_width="135dp"
+        android:layout_height="49dp"
         android:text="Confirmar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.953" />
+        app:layout_constraintVertical_bias="0.931" />
+
+    <Button
+        android:id="@+id/btnCancelarIngresoUsuario"
+        android:layout_width="135dp"
+        android:layout_height="49dp"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.84"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.933" />
+
+    <EditText
+        android:id="@+id/tvDate"
+        android:layout_width="253dp"
+        android:layout_height="60dp"
+        android:hint="Edad"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.732" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

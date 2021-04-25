@@ -80,35 +80,48 @@ public class MovimientoEgreso extends AppCompatActivity {
                     ingresarMontoBD();
                     finish();
                     break;
+                case R.id.btnCancelaregreso:
+                    finish();
+                    break;
             }
 
         }
     public void ingresarMontoBD(){
         ConexionSQLiteHelper conn =  new ConexionSQLiteHelper(this, "bd_BlackSheep", null,1);
         SQLiteDatabase db = conn.getWritableDatabase();
-        int idComboCaja = (int) spinnerCaja.getSelectedItemId();
-        //--> Se genera movimiento de Egreso
-        ContentValues valuesMovIng  = new ContentValues();
-        valuesMovIng.put(Utilidades.CAMPO_MOVIMIENTO_IDPERFIL, perfil.getIdPerfil());
-        valuesMovIng.put(Utilidades.CAMPO_MOVIMIENTO_MONTO, "-"+monto.getText().toString());
-        valuesMovIng.put(Utilidades.CAMPO_MOVIMIENTO_INGEGR,"E");
-        valuesMovIng.put(Utilidades.CAMPO_MOVIMIENTO_DESCRIPCION, desc.getText().toString());
-        valuesMovIng.put(Utilidades.CAMPO_MOVIMIENTO_CAJA, listaCajas.get(idComboCaja).getIdCaja());
-        Long var = db.insert(Utilidades.TABLA_MOVIMIENTOS,null,valuesMovIng);
 
+        int idComboCaja = (int) spinnerCaja.getSelectedItemId();
+        String [] parametro  = {listaCajas.get(idComboCaja).getIdCaja().toString()};
+        double montoAuxiliar =  listaCajas.get(idComboCaja).getMonto();
+        double nuevoMonto    = montoAuxiliar - Integer.parseInt(monto.getText().toString());
+        if(nuevoMonto>=0){
+            //--> Actualizo Tabla Caja
+            ContentValues valuesMovIngCaja  = new ContentValues();
+            valuesMovIngCaja.put(Utilidades.CAMPO_CAJA_MONTO,nuevoMonto);
+            db.update(Utilidades.TABLA_CAJAS,valuesMovIngCaja,Utilidades.CAMPO_IDCAJA+"=?",parametro);
+            //--> Se genera movimiento de Egreso
+            ContentValues valuesMovIng  = new ContentValues();
+            valuesMovIng.put(Utilidades.CAMPO_MOVIMIENTO_IDPERFIL, perfil.getIdPerfil());
+            valuesMovIng.put(Utilidades.CAMPO_MOVIMIENTO_MONTO, "-"+monto.getText().toString());
+            valuesMovIng.put(Utilidades.CAMPO_MOVIMIENTO_INGEGR,"E");
+            valuesMovIng.put(Utilidades.CAMPO_MOVIMIENTO_DESCRIPCION, desc.getText().toString());
+            valuesMovIng.put(Utilidades.CAMPO_MOVIMIENTO_CAJA, listaCajas.get(idComboCaja).getIdCaja());
+            Long var = db.insert(Utilidades.TABLA_MOVIMIENTOS,null,valuesMovIng);
+        } else {
+            Toast.makeText(getApplicationContext(), "La caja no puede tener saldo negativo." + "\n" +
+                    "Verifique el monto ingresado, por favor!",Toast.LENGTH_SHORT).show();
+        }
+
+        /*
         //--> Actualizo Tabla Caja
-        String [] parametro = {listaCajas.get(idComboCaja).getIdCaja().toString()};
-        Cursor cursor2 = db.rawQuery("SELECT * FROM " + Utilidades.TABLA_CAJAS + " WHERE idCaja = "+listaCajas.get(idComboCaja).getIdCaja(),null);
-        int montoAuxiliar =  cursor2.getInt(4);
-        int nuevoMonto = montoAuxiliar - Integer.parseInt(monto.getText().toString());
+        String [] parametro  = {listaCajas.get(idComboCaja).getIdCaja().toString()};
+        double montoAuxiliar =  listaCajas.get(idComboCaja).getMonto();
+        double nuevoMonto    = montoAuxiliar - Integer.parseInt(monto.getText().toString());
         ContentValues valuesMovIngCaja  = new ContentValues();
-        valuesMovIng.put(Utilidades.CAMPO_MOVIMIENTO_IDPERFIL, perfil.getIdPerfil());
-        valuesMovIng.put(Utilidades.CAMPO_MOVIMIENTO_MONTO, "-"+nuevoMonto);
-        valuesMovIng.put(Utilidades.CAMPO_MOVIMIENTO_INGEGR,"E");
-        valuesMovIng.put(Utilidades.CAMPO_MOVIMIENTO_DESCRIPCION, desc.getText().toString());
-        valuesMovIng.put(Utilidades.CAMPO_MOVIMIENTO_CAJA, listaCajas.get(idComboCaja).getIdCaja());
+        valuesMovIngCaja.put(Utilidades.CAMPO_CAJA_MONTO,nuevoMonto);
         db.update(Utilidades.TABLA_CAJAS,valuesMovIngCaja,Utilidades.CAMPO_IDCAJA+"=?",parametro);
 
+         */
         db.close();
 
     }

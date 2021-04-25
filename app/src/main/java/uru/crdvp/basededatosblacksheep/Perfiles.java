@@ -55,7 +55,7 @@ public class Perfiles extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Perfil perfil = listaPerfiles.get(position);
                 //Toast.makeText(getApplicationContext(),"Perfil: " + perfil.getIdPerfil() + "\n" + "Nombre: " + perfil.getNombre(),Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(Perfiles.this,Balance.class);
+                Intent intent = new Intent(Perfiles.this,Cajas.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("perfil",perfil);
                 intent.putExtras(bundle);
@@ -88,7 +88,7 @@ public class Perfiles extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Perfil perfil = listaPerfiles.get(position);
                 //Toast.makeText(getApplicationContext(),"Perfil: " + perfil.getIdPerfil() + "\n" + "Nombre: " + perfil.getNombre(),Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(Perfiles.this,Balance.class);
+                Intent intent = new Intent(Perfiles.this,Cajas.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("perfil",perfil);
                 intent.putExtras(bundle);

@@ -38,12 +38,12 @@ public class RegistroPerfiles extends AppCompatActivity {
         recibirDatos();
 
         perfil = (EditText) findViewById(R.id.tvNombrePerfil);
-        usuario = (TextView) findViewById(R.id.tvUsuario);
-        usuario.setText(usuarioIngreso.getIdUsuario());
+        //usuario = (TextView) findViewById(R.id.tvUsuario);
+        //usuario.setText(usuarioIngreso.getIdUsuario());
 
         conn = new ConexionSQLiteHelper(this, "bd_BlackSheep", null,1);
         
-        consultarListaPersonas();
+        //consultarListaPersonas();
 
     }
 
@@ -65,10 +65,10 @@ public class RegistroPerfiles extends AppCompatActivity {
             usuario.setContraseña(cursor.getString(1));
             usuario.setNombre(cursor.getString(2));
             usuario.setPais(cursor.getString(4));
-
             personasLista.add(usuario);
         }
         obtenerLista();
+        db.close();
     }
 
     private void obtenerLista() {
@@ -95,12 +95,7 @@ public class RegistroPerfiles extends AppCompatActivity {
 
         //Utilizo para grabar tabla de perfil
         ContentValues values = new ContentValues();
-        //int idComboPerfil    = (int) comboPerfiles.getSelectedItemId();
-        //values.put(Utilidades.CAMPO_IDPERFIL,idComboPerfil);
         values.put(Utilidades.CAMPO_PERFIL_NOMBRE,perfil.getText().toString());
-
-        //Toast.makeText(getApplicationContext(),"idComboPerfil " + idComboPerfil + "\n" + "Nombre: " + perfil.getText().toString(),Toast.LENGTH_SHORT).show();
-        //int idCombo = (int) comboUsuarios.getSelectedItemId();
 
         try {
             Long idResultante = db.insert(Utilidades.TABLA_PERFILES,Utilidades.CAMPO_IDPERFIL,values);

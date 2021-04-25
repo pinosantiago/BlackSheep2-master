@@ -12,7 +12,7 @@
     android:paddingBottom="16dp"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    >>
+    >
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAgregarPerfil"
@@ -44,14 +44,15 @@
 
         <ListView
             android:id="@+id/listViewPerfiles"
-            android:layout_width="288dp"
-            android:layout_height="530dp"
+            android:layout_width="334dp"
+            android:layout_height="412dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
-            android:textColor="@color/black"
-            android:background="@drawable/border_ui"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="73dp"
+
             android:divider="@color/colorAccent"
-            android:dividerHeight="4dip">
-        </ListView>
+            android:dividerHeight="4dip"
+            android:textColor="@color/black"></ListView>
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

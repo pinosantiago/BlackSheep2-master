@@ -25,7 +25,7 @@ public class IngresoUsuario extends AppCompatActivity {
     EditText tvUsuarioLog,tvContraseñaLog,tvNombreLog,tvPaisLog;
     private TextView mDisplayDate,tvFechaNacimiento;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
-    Button Confirmar;
+    Button Confirmar, Cancelar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,7 @@ public class IngresoUsuario extends AppCompatActivity {
         tvFechaNacimiento = (TextView) findViewById(R.id.tvDate);
         tvPaisLog         = (EditText) findViewById(R.id.tvPaisLog);
         Confirmar         = (Button) findViewById(R.id.BtnConfirmar);
+        Cancelar          = (Button) findViewById(R.id.btnCancelarIngresoUsuario);
 
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +69,11 @@ public class IngresoUsuario extends AppCompatActivity {
                 // Usar registrarUsuario() y no registrarUsuarioSql() --> Falta insert
                 registrarUsuario();
                 registrarPerfiles();
+                finish();
+            }
+        });
+        Cancelar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
                 finish();
             }
         });

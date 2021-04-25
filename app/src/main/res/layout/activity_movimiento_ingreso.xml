@@ -20,6 +20,19 @@
         app:layout_constraintVertical_bias="0.028" />
 
     <Button
+        android:id="@+id/btnCancelarIngreso"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:onClick="onClick"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.603"
+        app:layout_constraintStart_toEndOf="@+id/BtnConfirmar1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.915" />
+
+    <Button
         android:id="@+id/BtnConfirmar1"
         android:layout_width="135dp"
         android:layout_height="49dp"
@@ -27,28 +40,15 @@
         android:text="Confirmar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.745" />
-
-    <Button
-        android:id="@+id/btnConfirmar2"
-        android:layout_width="135dp"
-        android:layout_height="50dp"
-        android:onClick="onClick"
-        android:text="Cancelar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.592"
-        app:layout_constraintStart_toEndOf="@+id/BtnConfirmar1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.745" />
+        app:layout_constraintVertical_bias="0.913" />
 
     <EditText
         android:id="@+id/montoingreso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="291dp"
+        android:layout_height="52dp"
         android:ems="10"
         android:hint="Ingresa el monto"
         android:inputType="number"
@@ -62,7 +62,7 @@
 
     <EditText
         android:id="@+id/descingreso"
-        android:layout_width="288dp"
+        android:layout_width="291dp"
         android:layout_height="117dp"
         android:ems="10"
         android:hint="Ingresa una descripcion (opcional)"
@@ -77,16 +77,31 @@
 
     <EditText
         android:id="@+id/fechaingreso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="291dp"
+        android:layout_height="49dp"
         android:ems="10"
         android:hint="Fecha(por defecto ahora)"
         android:inputType="date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.471"
         tools:ignore="MissingConstraints" />
+
+
+    <Spinner
+        android:id="@+id/SpnCajaIngreso"
+        android:layout_width="291dp"
+        android:layout_height="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.573"
+        tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
