@@ -40,7 +40,7 @@ public class Cajas extends AppCompatActivity {
         recibirDatos();
         int cantidadCajas = verificoPerfil();
 
-        Toast.makeText(getApplicationContext(), "Ingrese con " + cantidadCajas + " Cajas!",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), "Ingrese con " + cantidadCajas + " Cajas!",Toast.LENGTH_SHORT).show();
 
         if(cantidadCajas == 0){
             cajasPorDefecto();
@@ -49,7 +49,6 @@ public class Cajas extends AppCompatActivity {
         recyclerCaja = findViewById(R.id.rvcajas);
         GridLayoutManager linearmanager = new GridLayoutManager(this,2);
         recyclerCaja.setLayoutManager(linearmanager);
-
         AdaptadorCaja cajaAdaptador = new AdaptadorCaja(listaCajas);
 
         cajaAdaptador.setOnClickListener(new View.OnClickListener() {
@@ -65,16 +64,6 @@ public class Cajas extends AppCompatActivity {
         });
 
         recyclerCaja.setAdapter(cajaAdaptador);
-
-        //Caja nuevaCaja = new Caja(1,perfil.getIdPerfil().toString(),perfil.getNombre(),25,0,null);
-        //listaCajas.add(nuevaCaja);
-
-
-
-
-
-
-
         fabAgregarCaja = (FloatingActionButton) findViewById(R.id.fabAgregarCaja);
         fabAgregarCaja.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,7 +74,6 @@ public class Cajas extends AppCompatActivity {
                 bundle.putSerializable("caja",cajaAux);
                 intent.putExtras(bundle);
                 startActivity(intent);
-                //Toast.makeText(getApplicationContext(), "Funciona Boton Flotante!!",Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -93,19 +81,13 @@ public class Cajas extends AppCompatActivity {
         super.onResume();
         listaCajas.clear();
         int cantidadCajas = verificoPerfil();
-
-        Toast.makeText(getApplicationContext(), "Ingrese con " + cantidadCajas + " Cajas!",Toast.LENGTH_SHORT).show();
-
         if(cantidadCajas == 0){
             cajasPorDefecto();
         }
-
         recyclerCaja = findViewById(R.id.rvcajas);
         GridLayoutManager linearmanager = new GridLayoutManager(this,2);
         recyclerCaja.setLayoutManager(linearmanager);
-
         AdaptadorCaja cajaAdaptador = new AdaptadorCaja(listaCajas);
-
         cajaAdaptador.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,18 +99,12 @@ public class Cajas extends AppCompatActivity {
                 startActivity(detalleCaja);
             }
         });
-
         recyclerCaja.setAdapter(cajaAdaptador);
-
-
-
     }
-
 
     private void cajasPorDefecto() {
         conn = new ConexionSQLiteHelper(this, "bd_BlackSheep", null,1);
         SQLiteDatabase db = conn.getWritableDatabase();
-
         //--> Cargo Cajas por Defecto
         int defectoCaja = 1;
         ContentValues values = new ContentValues();
@@ -140,7 +116,6 @@ public class Cajas extends AppCompatActivity {
             values.put(Utilidades.CAMPO_CAJA_MONTO,0);
             values.put(Utilidades.CAMPO_CAJA_DESCRIPCION,"");
             Long idResultante = db.insert(Utilidades.TABLA_CAJAS, Utilidades.CAMPO_IDCAJA,values);
-            //Toast.makeText(getApplicationContext(),"Id Registro: " + idResultante,Toast.LENGTH_SHORT).show();
             defectoCaja++;
         }
         db.close();
@@ -159,16 +134,13 @@ public class Cajas extends AppCompatActivity {
                 // Cargo el IdPerfil de la relacion
                 idCaja   = cursor.getInt(0);
                 idPerfil = cursor.getString(1);
-                //Toast.makeText(getApplicationContext(),"idCaja: " + idCaja + "\n" + "idPerfil: " + idPerfil,Toast.LENGTH_SHORT).show();
                 if(perfil.getIdPerfil() == Integer.parseInt(idPerfil.trim())){
-                    //listaIdCajas.add(idCaja);
                     cantidadCajasPerfil++;
                     caja = new Caja(idCaja,idPerfil,cursor.getString(2),cursor.getInt(3),cursor.getInt(4),cursor.getString(5));
                     listaCajas.add(caja);
                 }
             }
             db.close();
-            //Toast.makeText(getApplicationContext(),"El registro fue exitoso",Toast.LENGTH_SHORT).show();
         } catch (Exception e){
             Toast.makeText(getApplicationContext(),"Error en la carga de Cajas!",Toast.LENGTH_SHORT).show();
         }

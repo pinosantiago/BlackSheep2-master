@@ -61,6 +61,7 @@ public class CajaDetalle extends AppCompatActivity {
         switch (view.getId()){
             case R.id.BtnEliminarCaja:
                 eliminarCaja();
+                redefinirPorcentaje();
                 finish();
                 break;
             case R.id.btnEditarCaja:
@@ -73,6 +74,15 @@ public class CajaDetalle extends AppCompatActivity {
                 finish();
                 break;
         }
+    }
+
+    private void redefinirPorcentaje() {
+        Caja caja1 = caja;
+        Intent detalleCaja = new Intent(CajaDetalle.this, RedefinirPorcentajeCaja.class);
+        Bundle bundleDetalleCaja1  = new Bundle();
+        bundleDetalleCaja1.putSerializable("caja",caja1);
+        detalleCaja.putExtras(bundleDetalleCaja1);
+        startActivity(detalleCaja);
     }
 
     private void eliminarCaja() {

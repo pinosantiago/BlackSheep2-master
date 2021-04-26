@@ -14,7 +14,7 @@
         <activity android:name=".Cajas" />
         <activity android:name=".Balance" />
         <activity android:name=".VerPerfiles" />
-        <activity android:name=".Login" />
+        <!--activity android:name=".Login" /-->
         <activity android:name=".RegistroPerfiles" />
         <activity android:name=".DetallePerfil" />
         <activity android:name=".Perfiles" />
@@ -23,7 +23,9 @@
         <activity android:name=".MovimientoIngreso"/>
         <activity android:name=".MovimientoEgreso"/>
         <activity android:name=".DetalleMovimiento"/>
-        <activity android:name=".MainActivity">
+        <activity android:name=".RedefinirPorcentajeCaja"/>
+        <activity android:name=".Login">
+
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

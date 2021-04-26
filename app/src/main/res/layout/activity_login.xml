@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/fondo_de_pantalla3"
     tools:context=".Login">
 
     <ImageView
+        android:layout_marginTop="10dp"
         android:id="@+id/imgLogo"
         android:layout_width="match_parent"
-        android:layout_height="267dp"
+        android:layout_height="163dp"
         android:src="@drawable/logo1" />
 
     <EditText
@@ -49,27 +49,76 @@
     <Button
         android:id="@+id/btnIngresar"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="6"
-        android:text="@string/ingresa"
+        android:layout_height="14dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="5dp"
+        android:layout_weight="6"
         android:background="@color/colorAccent"
-        android:textColor="@color/white"
-        android:onClick="onClick" />
+        android:onClick="onClick"
+        android:text="@string/ingresa"
+        android:textColor="@color/white" />
+
     <Button
         android:id="@+id/tvRegistrarse"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="6"
-        android:text="Registrarse"
+        android:layout_height="15dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="5dp"
+        android:layout_weight="6"
         android:background="@color/colorAccent"
-        android:textColor="@color/white"
-        android:onClick="onClick" />
+        android:onClick="onClick"
+        android:text="Registrarse"
+        android:textColor="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="13dp"
+        android:layout_weight="15"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imgFacebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#00000000"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:src="@drawable/facebook_icon" />
+
+        <ImageButton
+            android:id="@+id/imgInstagram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#00000000"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:src="@drawable/instagram_icon" />
+
+        <ImageButton
+            android:id="@+id/imgTwitter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#00000000"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:src="@drawable/twitter_icon" />
+
+        <ImageButton
+            android:id="@+id/imgGogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#00000000"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:src="@drawable/google_icon" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tvRecordarPass"

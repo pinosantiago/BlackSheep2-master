@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="130dp"
     android:layout_height="130dp"
-    android:background="@drawable/cajita"
+    android:background="#FFC95C"
     android:orientation="vertical"
     android:layout_margin="10dp"
     >
@@ -38,6 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="20%"
+        android:layout_marginRight="5dp"
         android:gravity="bottom"
         android:textAlignment="viewEnd"
         tools:ignore="RtlCompat"

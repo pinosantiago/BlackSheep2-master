@@ -2,9 +2,11 @@ package uru.crdvp.basededatosblacksheep;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -90,6 +92,26 @@ public class Login extends AppCompatActivity {
                 // Crear panel de configuracion de Pass
                 Intent cambiarPass = new Intent(Login.this, IngresoUsuario.class);
                 startActivity(cambiarPass);
+                break;
+            case R.id.imgInstagram:
+                Intent browserIntentInstagram = new Intent(Intent.ACTION_VIEW,Uri.parse(
+                        "http://www.instagram.com/"));
+                startActivity(browserIntentInstagram);
+                break;
+            case R.id.imgGogle:
+                Intent browserIntentGoogle = new Intent(Intent.ACTION_VIEW,Uri.parse(
+                        "http://www.google.com/"));
+                startActivity(browserIntentGoogle);
+                break;
+            case R.id.imgFacebook:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW,Uri.parse(
+                        "http://www.facebook.com/"));
+                startActivity(browserIntent);
+                break;
+            case R.id.imgTwitter:
+                Intent browserIntentTwitter = new Intent(Intent.ACTION_VIEW,Uri.parse(
+                        "http://www.twitter.com/"));
+                startActivity(browserIntentTwitter);
                 break;
         }
     }

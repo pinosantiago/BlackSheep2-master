@@ -12,6 +12,10 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import uru.crdvp.basededatosblacksheep.entidades.Caja;
 import uru.crdvp.basededatosblacksheep.entidades.Movimientos;
 import uru.crdvp.basededatosblacksheep.utilidades.Utilidades;
@@ -28,15 +32,18 @@ public class DetalleMovimiento extends AppCompatActivity {
         setContentView(R.layout.activity_movimiento_detalle);
         conn = new ConexionSQLiteHelper(this, "bd_BlackSheep", null, 1);
         tvMontoMovimiento = (TextView) findViewById(R.id.tvmontomovimientodetalle);
-        tvFechaMovimiento = (TextView) findViewById(R.id.tvdescdetallemov);
-        tvDescMovimiento = (TextView) findViewById(R.id.tvfechadetallemov);
+        tvFechaMovimiento = (TextView) findViewById(R.id.tvfechadetallemov);
+        tvDescMovimiento = (TextView) findViewById(R.id.tvdescdetallemov);
         recibirDatos();
 
 
-        tvMontoMovimiento.setText("Monto: "+monto);
-        tvDescMovimiento.setText("Fecha: " +fecha);
-        tvFechaMovimiento.setText("Descripción: "+desc);
-
+        tvMontoMovimiento.setText("Monto: $"+monto);
+        tvDescMovimiento.setText("Descripción: "+desc);
+        //tvFechaMovimiento.setText("Descripción: "+desc);
+        Date date = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+        String fecha2 = dateFormat.format(date);
+        tvFechaMovimiento.setText("Fecha: "+fecha2);
 
 
 

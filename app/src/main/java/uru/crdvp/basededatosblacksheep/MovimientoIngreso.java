@@ -16,7 +16,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 import uru.crdvp.basededatosblacksheep.R;
 import uru.crdvp.basededatosblacksheep.entidades.Caja;
@@ -43,9 +46,7 @@ public class MovimientoIngreso extends AppCompatActivity {
         monto       =  (EditText) findViewById(R.id.montoingreso);
         desc        =  (EditText) findViewById(R.id.descingreso);
         spinnerCaja =  (Spinner)  findViewById(R.id.SpnCajaIngreso);
-
         conn        =   new ConexionSQLiteHelper(this, "bd_BlackSheep", null,1);
-
         obtenerCajas();
         adaptador = new ArrayAdapter (this,android.R.layout.simple_spinner_item,listaPerfiles);
         spinnerCaja.setAdapter(adaptador);
@@ -92,11 +93,12 @@ public class MovimientoIngreso extends AppCompatActivity {
                 else{
                     if(fecha.getText().toString().isEmpty()){
 
+
+
                     }
                     ingresarMontoBD();
                     actualizaMontoCaja();
                     finish();
-
                 }
                 break;
             case R.id.btnCancelarIngreso:
@@ -119,6 +121,7 @@ public class MovimientoIngreso extends AppCompatActivity {
         valuesMovIng.put(Utilidades.CAMPO_MOVIMIENTO_INGEGR,"I");
         valuesMovIng.put(Utilidades.CAMPO_MOVIMIENTO_DESCRIPCION, desc.getText().toString());
         valuesMovIng.put(Utilidades.CAMPO_MOVIMIENTO_CAJA,idAux);
+        //valuesMovIng.put(Utilidades.CAMPO_MOVIMIENTO_FECHA,fecha.getText().toString());
         Long var = db.insert(Utilidades.TABLA_MOVIMIENTOS,null,valuesMovIng);
         db.close();
      }

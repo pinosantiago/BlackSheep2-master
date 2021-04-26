@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_de_pantalla3"
     tools:context=".Perfiles">
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     android:layout_width="match_parent"
@@ -22,7 +21,7 @@
         android:background="@drawable/border_ui"
         android:clickable="true"
         android:src="@drawable/boton_agregar"
-        app:backgroundTint="#FFFFFF"
+        app:backgroundTint="@color/colorPrimariy"
         app:rippleColor="@color/colorAccent" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

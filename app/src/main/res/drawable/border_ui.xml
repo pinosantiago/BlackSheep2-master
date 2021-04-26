@@ -4,7 +4,7 @@
     <!-- use this for a background colour -->
     <solid android:color="#00000000" />
     <stroke android:color="@color/black" ></stroke>
-    <stroke android:width="4dip" android:color="@color/colorAccent" />
+    <stroke android:width="4dip" android:color="@color/colorPrimariyDark" />
     <padding
         android:right="2dp"
         android:left="2dp"

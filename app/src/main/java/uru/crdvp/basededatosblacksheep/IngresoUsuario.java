@@ -87,14 +87,14 @@ public class IngresoUsuario extends AppCompatActivity {
         ContentValues values = new ContentValues();
         values.put(Utilidades.CAMPO_PERFIL_NOMBRE,"Perfil 1");
         Long idResultante = db.insert(Utilidades.TABLA_PERFILES, Utilidades.CAMPO_IDPERFIL,values);
-        Toast.makeText(getApplicationContext(),"Id Registro1: " + idResultante,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),"Id Registro1: " + idResultante,Toast.LENGTH_SHORT).show();
 
         //--> Cargo Relacion Perfil-Usuario
         ContentValues valuesRel1 = new ContentValues();
         valuesRel1.put(Utilidades.CAMPO_IDPERFILU,idResultante);
         valuesRel1.put(Utilidades.CAMPO_IDPERFIL_USUARIO,tvUsuarioLog.getText().toString());
         Long idResultanteRel1 = db.insert(Utilidades.TABLA_USUARIO_PERFILES, Utilidades.CAMPO_IDPERFIL,valuesRel1);
-        Toast.makeText(getApplicationContext(),"Id Registro Relacion1: " + idResultanteRel1,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),"Id Registro Relacion1: " + idResultanteRel1,Toast.LENGTH_SHORT).show();
 
         db.close();
         Toast.makeText(getApplicationContext(),"El registro fue exitoso",Toast.LENGTH_SHORT).show();

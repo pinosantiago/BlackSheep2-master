@@ -3,6 +3,7 @@ package uru.crdvp.basededatosblacksheep;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +19,6 @@ public class ActualizarCaja extends AppCompatActivity {
     ConexionSQLiteHelper conn;
     EditText etNombre,etPorcentaje,etDescripcion;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +28,22 @@ public class ActualizarCaja extends AppCompatActivity {
         etNombre      = (EditText) findViewById(R.id.etNombre);
         etPorcentaje  = (EditText) findViewById(R.id.etPorcentaje);
         etDescripcion = (EditText) findViewById(R.id.etDescripcion);
+
+        if (funcionalidad == 2){
+            etNombre.setText(caja.getNombre());
+            etPorcentaje.setText(caja.getPorcentaje().toString());
+            etDescripcion.setText(caja.getDescripcion());
+        }
+
+    }
+
+    private void redefinirPorcentaje() {
+        Caja caja1 = caja;
+        Intent detalleCaja = new Intent(ActualizarCaja.this, RedefinirPorcentajeCaja.class);
+        Bundle bundleDetalleCaja1  = new Bundle();
+        bundleDetalleCaja1.putSerializable("caja",caja1);
+        detalleCaja.putExtras(bundleDetalleCaja1);
+        startActivity(detalleCaja);
     }
 
     public void onClick(View view) {
@@ -37,23 +53,21 @@ public class ActualizarCaja extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Ingresa un nombre para la caja",Toast.LENGTH_SHORT).show();
                 }else{
                     //si el nombre no esta vacio se fija si el porcentaje no se modifico
-                    Toast.makeText(getApplicationContext(),"el %%%% "+caja.getPorcentaje().toString(),Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(),"el %%%% "+caja.getPorcentaje().toString(),Toast.LENGTH_SHORT).show();
                     if (funcionalidad != 1){
-                        if(caja.getPorcentaje().toString()!=etPorcentaje.getText().toString()){
-                            //agregar lo que hizo christian
-                        }
-                        else{
+                        if(caja.getPorcentaje() != Integer.parseInt(etPorcentaje.getText().toString())){
+                            modificarCaja();
+                            redefinirPorcentaje();
+                            finish();
+                        } else{
                             modificarCaja();
                             finish();
                         }
-
                     } else {
-                        //AGREGAR LO DE CHRISTIAN
-                        //creoCaja();
-
-                        //finish();
+                        creoCaja();
+                        redefinirPorcentaje();
+                        finish();
                     }
-
                 }
                 break;
             case R.id.btnCancelar:
