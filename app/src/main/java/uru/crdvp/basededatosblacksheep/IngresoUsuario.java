@@ -85,7 +85,7 @@ public class IngresoUsuario extends AppCompatActivity {
 
         //--> Cargo Perfil por Defecto 1
         ContentValues values = new ContentValues();
-        values.put(Utilidades.CAMPO_PERFIL_NOMBRE,"Perfil 1");
+        values.put(Utilidades.CAMPO_PERFIL_NOMBRE,"Perfil por defecto");
         Long idResultante = db.insert(Utilidades.TABLA_PERFILES, Utilidades.CAMPO_IDPERFIL,values);
         //Toast.makeText(getApplicationContext(),"Id Registro1: " + idResultante,Toast.LENGTH_SHORT).show();
 

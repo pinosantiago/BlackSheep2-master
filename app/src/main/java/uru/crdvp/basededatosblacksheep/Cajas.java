@@ -106,13 +106,16 @@ public class Cajas extends AppCompatActivity {
         conn = new ConexionSQLiteHelper(this, "bd_BlackSheep", null,1);
         SQLiteDatabase db = conn.getWritableDatabase();
         //--> Cargo Cajas por Defecto
-        int defectoCaja = 1;
+        int defectoCaja = 0;
         ContentValues values = new ContentValues();
+
+        String[] nombres_caja ={"Gasto Diario","Ocio", "Inversion", "Ahorro", "Educacion","Donacion"};
+        int [] porcentajes_caja ={55,10,10,10,10,5};
         while (defectoCaja < 6){
             values.clear();
             values.put(Utilidades.CAMPO_CAJA_IDPERFIL,perfil.getIdPerfil());
-            values.put(Utilidades.CAMPO_PERFIL_NOMBRE,"Caja " + defectoCaja);
-            values.put(Utilidades.CAMPO_CAJA_PORCENTAJE,20);
+            values.put(Utilidades.CAMPO_PERFIL_NOMBRE,  nombres_caja[defectoCaja]);
+            values.put(Utilidades.CAMPO_CAJA_PORCENTAJE,porcentajes_caja[defectoCaja]);
             values.put(Utilidades.CAMPO_CAJA_MONTO,0);
             values.put(Utilidades.CAMPO_CAJA_DESCRIPCION,"");
             Long idResultante = db.insert(Utilidades.TABLA_CAJAS, Utilidades.CAMPO_IDCAJA,values);
