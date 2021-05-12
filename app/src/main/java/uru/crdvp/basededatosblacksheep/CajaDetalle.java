@@ -46,8 +46,8 @@ public class CajaDetalle extends AppCompatActivity {
                 idCaja = cursor.getInt(0);
                 if(caja.getIdCaja() == idCaja){
                     tvNombreCaja.setText(caja.getNombre());
-                    tvDescripcionCaja.setText("Descripcion: " + (caja.getDescripcion()));
-                    tvPorcentajeCaja.setText("Porcentanje: " + caja.getPorcentaje() + "%");
+                    tvDescripcionCaja.setText("Descripción: " + (caja.getDescripcion()));
+                    tvPorcentajeCaja.setText("Porcentaje: " + caja.getPorcentaje() + "%");
                     tvMontoCaja.setText("Total: $ " + caja.getMonto());
                 }
             }

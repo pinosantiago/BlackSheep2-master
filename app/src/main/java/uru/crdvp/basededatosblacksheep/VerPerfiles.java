@@ -34,7 +34,7 @@ public class VerPerfiles extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_perfiles);
 
-        //recibirDatos();
+        recibirDatos();
 
         conn = new ConexionSQLiteHelper(getApplicationContext(),"bd_BlackSheep",null,1);
 
@@ -86,7 +86,7 @@ public class VerPerfiles extends AppCompatActivity {
     private void obtenerLista() {
         listaInformacion = new ArrayList<String>();
         for (int i = 0; i< listaPerfiles.size();i++){
-            listaInformacion.add(listaPerfiles.get(i).getIdPerfil() + " - "
+            listaInformacion.add(/*listaPerfiles.get(i).getIdPerfil()*/i + " - "
                     + listaPerfiles.get(i).getNombre());
         }
     }

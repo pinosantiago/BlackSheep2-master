@@ -85,7 +85,7 @@ public class IngresoUsuario extends AppCompatActivity {
 
         //--> Cargo Perfil por Defecto 1
         ContentValues values = new ContentValues();
-        values.put(Utilidades.CAMPO_PERFIL_NOMBRE,"Perfil por defecto");
+        values.put(Utilidades.CAMPO_PERFIL_NOMBRE,"Finanzas Personales");
         Long idResultante = db.insert(Utilidades.TABLA_PERFILES, Utilidades.CAMPO_IDPERFIL,values);
         //Toast.makeText(getApplicationContext(),"Id Registro1: " + idResultante,Toast.LENGTH_SHORT).show();
 
@@ -100,7 +100,7 @@ public class IngresoUsuario extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"El registro fue exitoso",Toast.LENGTH_SHORT).show();
     }
 
-    private void registrarUsuarioSql() {
+    /*private void registrarUsuarioSql() {
         //--> Falta la ejecucion del inser!!!
         ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "bd_BlackSheep", null,1);
         SQLiteDatabase db = conn.getWritableDatabase();
@@ -120,7 +120,7 @@ public class IngresoUsuario extends AppCompatActivity {
         tvNombreLog.setText("");
         tvPaisLog.setText("");
         //Toast.makeText(getApplicationContext(),"El registro fue exitoso",Toast.LENGTH_SHORT).show();
-    }
+    }*/
 
     private void registrarUsuario() {
 
